@@ -1,3 +1,34 @@
 body{
     background-color: grey;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
+
+.header{
+    background-color: deepskyblue;
+    width: 100%;
+    height: 50px;
+}
+
+.longDiv{
+    width: 60px;
+    margin: 0px;
+    height: 100vh;
+    background-color: mediumslateblue;
+    float: left;
+}
+
+.checkDiv{
+    height: 100vh;
+}
+
+.small-div{
+    float: right;
+    alignment: center;
+    margin: 20px 15vh 20px 20px;
+    border-style: solid;
+    border-color: white;
+    width: 400px;
+    height: 50px;
 }
