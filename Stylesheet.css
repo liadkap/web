@@ -37,7 +37,7 @@ h1{
 .inbox{
     position: absolute;
     left: 10px;
-    width: 240px;
+    width: 280px;
     height: 40px;
     top: 30px;
     border-bottom-right-radius: 5px;
@@ -48,7 +48,7 @@ h1{
 .outgoing{
     position: absolute;
     left: 10px;
-    width: 240px;
+    width: 280px;
     height: 40px;
     top: 90px;
     border-bottom-right-radius: 5px;
@@ -83,19 +83,31 @@ h1{
 }
 
 .mailItem{
-    margin: 15px auto;
-    border: solid black;
-    width: 50%;
-    height: 10%;
+    position: relative;
+    margin: 5px auto;
+    border-radius: 7px;
+    width: 60%;
+    height: 15%;
+    background-color: white;
 }
 
-.mailItemHeader{
+.mailItemHeaderText{
     position: absolute;
-    top: 4px;
+    font-size: xx-large;
+    top: 2px;
     left: 4px;
 }
 .mailItemFromHeader{
     position: absolute;
-    top: 20px;
+    top: 45px;
     left: 4px;
+}
+.vl{
+    position: absolute;
+    width: 1px;
+    top: 4px;
+    bottom: 4px;
+    border-radius: 5px;
+    left: 200px;
+    background-color: gray;
 }
