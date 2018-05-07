@@ -1,34 +1,36 @@
 body{
-    background-color: grey;
     width: 100%;
-    height: 100vh;
-    margin: 0px;
+    height: 100%;
+    margin: 0;
 }
 
 .header{
     background-color: deepskyblue;
     width: 100%;
-    height: 50px;
+    height: 100px;
 }
 
-.longDiv{
-    width: 60px;
-    margin: 0px;
-    height: 100vh;
+.sideBar{
+    width: 100px;
     background-color: mediumslateblue;
-    float: left;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
 }
 
-.checkDiv{
-    height: 100vh;
+.content {
+    overflow: auto;
+    background-color: gray;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 0;
+    bottom: 0;
 }
 
 .small-div{
-    float: right;
-    alignment: center;
-    margin: 20px 15vh 20px 20px;
-    border-style: solid;
-    border-color: white;
-    width: 400px;
-    height: 50px;
+    margin: 15px auto;
+    border: solid black;
+    width: 50%;
+    height: 10%;
 }
