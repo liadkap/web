@@ -1,56 +1,66 @@
 body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0;
 }
 
 h1{
     font-family: Arial;
-    left: 130px;
-    top: 10px;
     color: white;
-    position: absolute;
 }
 
 .mailImg {
     width: 80px;
     height: 80px;
-    left: 40px;
-    top: 10px;
-    position: absolute;
 }
 
 .header{
+    display: flex;
     background-color: deepskyblue;
     width: 100%;
     height: 100px;
 }
+.headerContent{
+    display: flex;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+}
 
 .sideBar{
-    width: 300px;
+    display: flex;
+    flex-direction: column;
     background-color: black;
-    position: absolute;
-    top: 100px;
-    bottom: 0;
+    flex: 1.5;
+}
+
+
+.sideBarContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 90px;
 }
 
 .inbox{
-    position: absolute;
-    left: 10px;
-    width: 285px;
-    height: 30px;
-    top: 30px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    flex-basis: 30px;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     background-color: orange;
 }
 
 .outgoing{
-    position: absolute;
-    left: 10px;
-    width: 285px;
-    height: 30px;
-    top: 65px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    flex-basis: 30px;
+    align-items: center;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     background-color: gray;
@@ -59,75 +69,72 @@ h1{
 .outgoingText{
     color: white;
     font-family: Arial;
-    position: absolute;
-    top: 5px;
-    left: 3px;
 }
 
 .inboxText{
     color: white;
     font-family: Arial;
-    position: absolute;
-    top: 5px;
-    left: 3px;
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: auto;
     background-color: gray;
-    position: absolute;
-    top: 100px;
-    left: 300px;
-    right: 0;
-    bottom: 0;
+    flex: 5;
 }
 
 .mailItem{
-    position: relative;
-    margin: 5px auto;
+    display: flex;
+    margin: 15px;
     border-radius: 7px;
-    width: 60%;
+    width: 80%;
     height: 15%;
     background-color: white;
 }
+.mailItemHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 .mailItemHeaderText{
-    position: absolute;
     font-size: xx-large;
-    top: 2px;
-    left: 4px;
 }
 .mailItemFromHeader{
-    position: absolute;
     top: 55px;
     left: 4px;
 }
 
 .mailItemFromText{
-    position: absolute;
     top: 55px;
     left: 60px;
 }
 
 .vl{
-    position: absolute;
     width: 1px;
-    top: 4px;
-    bottom: 4px;
     border-radius: 5px;
     left: 200px;
     background-color: gray;
 }
 
-.mailItemContentText {
-    position: absolute;
-    left: 215px;
+.mailItemContent{
+    display: flex;
+    flex: 5;
+    justify-content: stretch;
+}
+
+.mailItemImage{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex:5;
 }
 
 .warningIcon{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    align-self: flex-end;
+    justify-self: flex-end;
     width: 15px;
     height: 15px;
 }
