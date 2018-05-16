@@ -12,24 +12,12 @@ const getHeros =()=>{
     return herosArray;
 };
 
-/*const groupBy = (herosArray ,property = 'role')=>{
-    var groups = [];
+const groupBy = (herosArray ,property = 'role')=>{
     return herosArray.reduce(function(accumulator, currentValue){
         const val = currentValue[property];
-
-        if (accumulator[val] == undefined) {
-            accumulator = accumulator + {val:currentValue};
-        }
-        else {
-            accumulator[val].push(currentValue);
-        }
-    });
-};*/
-
-const groupBy = function(herosArray, property = 'role') {
-    return herosArray.reduce(function(result, item) {
-        (result[item[property]] = result[item[property]] || []).push(item);
-        return result;
+        accumulator[val] = accumulator[val] || [];
+        accumulator[val].push(currentValue);
+        return accumulator;
     });
 };
 
@@ -39,4 +27,8 @@ const getByRoles = (herosArray,role)=>{
 
 var heros = getHeros();
 
-console.log(groupBy(heros,'role'));
+Object.prototype.sayHello = function sayHello() {
+    return "Hi! my name is " + this['name'];
+};
+
+console.log(heros[5].sayHello());
