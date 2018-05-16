@@ -1,42 +1,27 @@
-const names = ["Doomfist", "Genji", "Mccree", "Pharah", "Reaper", "Soldier-76", "Sombra", "Tracer", "Bastion", "Hanzo", "Junkrat", "Mei", "Windowmaker", "Torbjorn", "D.Va", "Orisa", "Reinhardt", "Roadhog", "Winston", "Zarya", "Ana", "Brigitte", "Lucio", "Mercy", "Moira", "Symmetra", "Zenyatta"];
-const hp = ["250", "200", "200", "200", "250", "200", "200", "150", "200", "200", "200", "250", "200", "200", "400", "200", "300", "600", "400", "200", "200", "200", "200", "200", "200", "100", "50"];
-const roles = ["Offense", "Offense", "Offense", "Offense", "Offense", "Offense", "Offense", "Offense", "Defense", "Defense", "Defense", "Defense", "Defense", "Defense", "Tank", "Tank", "Tank", "Tank", "Tank", "Tank", "Support", "Support", "Support", "Support", "Support", "Support", "Support"];
+const {names, hp, roles} = require('./ow.json');
 
-const getHeros =()=>{
-    var herosArray = [];
+const getHeros = () => names.map((currentValue, index) => ({name: names[index], role: roles[index], hp: hp[index]}));
 
-    for(var i = 0; i < names.length; i++){
-        herosArray.push({'name' : names[i],'role': roles[i],'hp':hp[i]});
-    }
+const groupBy = (herosArray ,property = 'role') => herosArray.reduce((accumulator, currentValue) => {
+  const val = currentValue[property];
 
-    return herosArray;
-};
+  accumulator[val] = accumulator[val] || [];
+  accumulator[val].push(currentValue);
 
-/*const groupBy = (herosArray ,property = 'role')=>{
-    var groups = [];
-    return herosArray.reduce(function(accumulator, currentValue){
-        const val = currentValue[property];
+  return accumulator;
+});
 
-        if (accumulator[val] == undefined) {
-            accumulator = accumulator + {val:currentValue};
-        }
-        else {
-            accumulator[val].push(currentValue);
-        }
-    });
-};*/
+const getByRoles = (...roles) => getHeros().filter(({role}) => roles.includes(role));
 
-const groupBy = function(herosArray, property = 'role') {
-    return herosArray.reduce(function(result, item) {
-        (result[item[property]] = result[item[property]] || []).push(item);
-        return result;
-    });
-};
+let heros = getHeros();
 
-const getByRoles = (herosArray,role)=>{
-    return herosArray.filter(hero => hero.role == role);
-};
+const a = heros.map(hero => {
+  hero.sayHello = () => {
+    console.log(`Hi, my name is ${hero.name}`);
+  };
 
-var heros = getHeros();
+  return hero;
+});
 
-console.log(groupBy(heros,'role'));
+heros[2].sayHello();
+
