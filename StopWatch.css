@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stopWatch{
+    width: 60%;
+    height: 40%;
+}
+.clock{
+    height: 80%;
+}
+
+.buttons{
+    display: flex;
+    height: 15%;
+    justify-content: space-around;
+}
+
+#actionButton{
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    border-color: green;
+    background-color: green;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#actionButton:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#restartButton{
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    border-color: blue;
+    background-color: blue;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#restartButton:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.text{
+    font-family: "BenchNine";
+    font-size: x-large;
+    color: white;
+}
